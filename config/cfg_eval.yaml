@@ -1,0 +1,29 @@
+defaults:
+  - arch: trm_mamba
+  - _self_
+
+hydra:
+  output_subdir: null
+
+# Data path
+# data_paths: ['data/arc2concept-aug-1000']
+# data_paths: ['data/maze-100x100-wilson-hard-1k/maze-100x100-wilson-hard-1k']
+# data_paths: ['data/maze-30x30-hard-1k']
+data_paths: ['data/arc1concept-aug-1000']
+data_paths_test: []
+
+evaluators:
+  - name: arc@ARC
+  # - name: maze@MazeEvaluator
+
+
+global_batch_size: 128 # 2304 #768
+# load_checkpoint: 
+# load_checkpoint: /projectnb/cs523aw/students/hiltonr/TinyRecursiveModels_unchanged/checkpoints_runsoftrm/Arc2concept-aug-1000-ACT-torch/pretrain_att_arc2concept_4/step_42914
+# load_checkpoint: /projectnb/cs523aw/students/hiltonr/TinyRecursiveModels_unchanged/checkpoints_runsoftrm/Maze-100x100-wilson-hard-1k-ACT-torch/pretrain_att_maze100x100/step_62500
+# load_checkpoint: /projectnb/cs523aw/students/hiltonr/TinyRecursiveModels_unchanged/checkpoints_mamba/Arc2concept-aug-1000-ACT-torch/pretrain_att_arc2concept_4/step_42914
+# load_checkpoint: /projectnb/cs523aw/students/hiltonr/TinyRecursiveModels_unchanged/checkpoints_mamba/Maze-30x30-hard-1k-ACT-torch/pretrain_att_maze30x30/step_62500
+# load_checkpoint: /projectnb/cs523aw/students/hiltonr/TinyRecursiveModels_unchanged/checkpoints_mamba/Maze-100x100-wilson-hard-1k-ACT-torch/pretrain_att_maze100x100/step_62500
+load_checkpoint: /projectnb/cs523aw/students/hiltonr/TinyRecursiveModels_unchanged/checkpoints_mamba/Arc1concept-aug-1000-ACT-torch/pretrain_att_arc1concept_4/step_30723
+checkpoint_path: ./eval_results
+seed: 0
